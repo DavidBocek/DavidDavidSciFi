@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="134" Column="39" />
+      <File FileName="Assets\Scripts\Player Managers\MovementManager.cs" Line="28" Column="17" />
+      <File FileName="Assets\Scripts\Player Managers\AnimationManager.cs" Line="31" Column="2" />
+      <File FileName="Assets\Scripts\Player Managers\HUDManager.cs" Line="55" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

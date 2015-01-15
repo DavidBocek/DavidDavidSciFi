@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{C96351D1-3E59-C891-5A2A-3B1EE51435CF}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\Bridge.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\DetachFace.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\ExplodeFaces.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\ExportObj.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\ExtrudeFace.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\FlipFaces.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\InvertSelection.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\Merge.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\PivotTool.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\ProBuilderizeGameObject.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\StripProBuilderScripts.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\ProBuilderMenuItems.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Repair\CleanUpLeakedMeshes.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Repair\FixGameObjectFlags.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Repair\ForceMeshRefresh.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Repair\RebuildSharedIndices.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Repair\SetProjectionAxis.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Tools\AutoNodraw.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Tools\ProjectNodrawUtil.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Tools\SelectFacesWithMaterial.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\pb_About.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\pb_Preferences.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\pb_Upgrade_Utility.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\Install\Editor\QuickStart.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProGrids\Editor\pg_Constant.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProGrids\Editor\pg_Editor.cs" />
+     <Compile Include="Assets\DownloadedAssets\6by7\ProGrids\Editor\pg_Preferences.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Demos\DemoHub\Editor\PunStartup.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonEditor.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonGUI.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewHandler.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewPrefabApply.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\PunSceneSettings.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\ReorderableListResources.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\ServerSettingsInspector.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonAnimatorViewEditor.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbody2DViewEditor.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbodyViewEditor.cs" />
+     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonTransformViewEditor.cs" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\readme.txt" />
+     <None Include="Assets\DownloadedAssets\Top-DownSF\Origin\Tools\Self_illum_reflective.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Plugins\release_history.txt" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_Flat_Pro\ZFS_Flat_Pro_Shader_Controls.txt" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\changelog.txt" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\DiffuseVertexColor.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\DownloadedAssets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_Flat_Free.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\DiffuseVertexColorTransparency.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_Flat_Pro.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_3D_Free\ZFS_3D_Free_Shader_Controls.txt" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_3D_Free.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProGrids\VersionInfo.txt" />
+     <None Include="Assets\DownloadedAssets\Resources\Holographic\Scripts\unlitAlpha.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\VersionInfo.txt" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_Flat_Free\ZFS_Flat_Free_Shader_Controls.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\DownloadedAssets\Top-DownSF\Demo\readme mobile.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SSAOShader.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\UnlitColor.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Instantiation\README.txt" />
+     <None Include="Assets\DownloadedAssets\Photon Unity Networking\Demos\DemoBoxes\Resources\eurof_tt.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\DownloadedAssets\Resources\Readme.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\DownloadedAssets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\DownloadedAssets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\UnlitColor-Overlay.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\DiffuseVertexColorEmission.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_3D_Pro\ZFS_3D_Pro_Shader_Controls.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_3D_Pro.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\DownloadedAssets\Photon Unity Networking\changelog.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Editor\Actions\Credits.txt" />
+     <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderCore">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Assets/DownloadedAssets/6by7/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderEditor">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Assets/DownloadedAssets/6by7/ProBuilder/Editor/ProBuilderEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="SixBySeven">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Assets/DownloadedAssets/6by7/Shared/Code/SixBySeven.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Assets/DownloadedAssets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>C:/Users/David/Documents/DavidDavidSciFi/SciFi/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{45F8B242-1F08-F29A-76D2-51A1DBB940AD}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{DE820395-D68D-0DF3-5D65-E016DE023688}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

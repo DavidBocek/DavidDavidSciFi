@@ -177,7 +177,10 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 				curShotConeRadius = Mathf.Min (curShotConeRadius, curShotConeRadiusMax);
 			}
 		}
+
+		//update HUD values
 		hudManager.UpdateCrosshairs(curShotConeRadius);
+		hudManager.UpdateAmmoCount(curClips, curSMGBullets, curRifleBullets);
 
 		//update animation values for shooting
 		animManager.SetSMGNotSniperBool(isInSMGMode);

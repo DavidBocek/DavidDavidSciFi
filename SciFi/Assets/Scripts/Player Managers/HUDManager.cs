@@ -5,6 +5,7 @@ public class HUDManager : MonoBehaviour {
 
 	public GameObject rifleCrosshairsObj;
 	public GameObject SMGCrosshairsObj;
+	public GameObject ammoCounterObj;
 	public float MAGIC_WORLD_UNITS_TO_PIXELS_RATIO;
 	private const float RIFLE_SIZE_TO_TARGETING_AREA_RATIO = 12.5f;
 	private const float SMG_SIZE_TO_TARGETING_AREA_RATIO = 3.63f;
@@ -12,6 +13,7 @@ public class HUDManager : MonoBehaviour {
 	private WeaponAndAbilityManager weaponManager;
 
 	private GameObject currentActiveCrosshairsObj;
+	private AmmoCountManager ammoCountManager;
 
 	private bool isAiming {get {return weaponManager.isAiming;}}
 	private bool isInSMGMode { get {return weaponManager.isInSMGMode;}}
@@ -20,6 +22,7 @@ public class HUDManager : MonoBehaviour {
 	void Start () {
 		weaponManager = GetComponent<WeaponAndAbilityManager>();
 		currentActiveCrosshairsObj = SMGCrosshairsObj;
+		ammoCountManager = ammoCounterObj.GetComponent<AmmoCountManager>();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +51,12 @@ public class HUDManager : MonoBehaviour {
 		SMGRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rPixSMG);
 		rifleRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rPixRifle);
 		rifleRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rPixRifle);
+	}
+
+	public void UpdateAmmoCount(int clipCount, int SMGAmmoCount, int rifleAmmoCount){
+		ammoCountManager.UpdateClipCount(clipCount);
+		ammoCountManager.UpdateSMGAmmoCount(SMGAmmoCount);
+		ammoCountManager.UpdateRifleAmmoCount(rifleAmmoCount);
 	}
 
 	private void HideCrosshairs(){

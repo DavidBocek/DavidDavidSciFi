@@ -2160,7 +2160,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Fire1shot
-  m_Speed: 1.5
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400006, guid: a9b68743e3e0a314cacc52378c39e0e3, type: 3}

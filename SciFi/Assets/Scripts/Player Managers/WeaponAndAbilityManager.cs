@@ -48,6 +48,14 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	private float curShotConeRadiusMin;
 	private float curShotConeRadiusMax;
 
+	//reload vars
+	public int SMGBulletsPerClip = 30;
+	public int rifleBulletsPerClip = 10;
+	public int maxClips = 4;
+	private int curClips;
+	private int curSMGBullets;
+	private int curRifleBullets;
+
 	// Use this for initialization
 	void Start () {
 		isInSMGMode = true;
@@ -58,10 +66,15 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 		animManager = GetComponent<AnimationManager>();
 		hudManager = GetComponent<HUDManager>();
 		movementManager = GetComponent<MovementManager>();
+
+		curClips = maxClips;
+		curSMGBullets = SMGBulletsPerClip;
+		curRifleBullets = rifleBulletsPerClip;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log ("SMG: " + curSMGBullets + " Rifle: " + curRifleBullets + " Clips: " + curClips);
 		if (Input.GetButtonDown("SwitchGunMode")){
 			isInSMGMode = !isInSMGMode;
 			if (isAiming){
@@ -95,20 +108,34 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 					isAiming = false;
 					movementManager.StartCoroutine("StopAimingAnimation");
 				}
-				animManager.TriggerReload();
-				StartCoroutine("DelayShooting",reloadAnimationDelay);
+				if(curClips > 0){
+					animManager.TriggerReload();
+					StartCoroutine("DelayShooting",reloadAnimationDelay);
+					StartCoroutine("Reload", reloadAnimationDelay);
+				}
+				else{
+					//TODO: Play click sound
+				}
 			}
 			if (isInSMGMode && isSMGInBurstMode){
-				if (Input.GetButtonDown("Fire1")){
+				if (Input.GetButtonDown("Fire1") && curSMGBullets > 0){
 					StartCoroutine("FireBurst", SMGShotCooldown);
+				} else if(curSMGBullets <= 0){
+					//TODO: Play click sound
 				}
-			} else if (isInSMGMode && !isSMGInBurstMode){
+			} else if (isInSMGMode && !isSMGInBurstMode && curSMGBullets > 0){
 				if (Input.GetButton("Fire1")){
 					StartCoroutine("FireOneShot", SMGShotCooldown);
+					curSMGBullets--;
+				} else if(curSMGBullets <= 0){
+					//TODO: Play click sound
 				}
-			} else {
-				if (Input.GetButtonDown("Fire1")){
+			} else if (!isInSMGMode){
+				if (Input.GetButtonDown("Fire1") && curRifleBullets > 0){
 					StartCoroutine("FireOneShot", RifleShotCooldown);
+					curRifleBullets--;
+				} else if(curRifleBullets <= 0){
+					//TODO: Play click sound
 				}
 			}
 			
@@ -202,6 +229,14 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 		//play sounds and shoot particles and such
 	}
 
+	private IEnumerator Reload(float reloadDelay){
+		yield return new WaitForSeconds(reloadDelay);
+		curSMGBullets = SMGBulletsPerClip;
+		curRifleBullets = rifleBulletsPerClip;
+		curClips--;
+	}
+
+
 	private IEnumerator Aim(){
 		isAiming = true;
 		movementManager.StartCoroutine("AimAnimation");
@@ -225,7 +260,12 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			animManager.TriggerBurstShot();
 		}
 		for (int i=0; i<burstCount; i++){
-			Shoot();
+			if(curSMGBullets > 0){
+				Shoot();
+				curSMGBullets--;
+			} else {
+				//TODO: play click noise
+			}
 			yield return new WaitForSeconds(shotCooldown);
 		}
 		canShoot = true;

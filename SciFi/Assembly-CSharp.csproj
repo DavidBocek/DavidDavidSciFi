@@ -170,6 +170,22 @@
      <Compile Include="Assets\DownloadedAssets\Resources\Holographic\Scripts\roboGui.cs" />
      <Compile Include="Assets\DownloadedAssets\Resources\Holographic\Scripts\sliders.cs" />
      <Compile Include="Assets\DownloadedAssets\Resources\Holographic\Scripts\transparency.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DAudioController.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DBeam.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DDespawn.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DFXController.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DFlameThrower.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DLightning.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DParticleScale.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DPool.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DProjectile.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DPulsewave.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DRandomize.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DShotgun.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DTime.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Code\F3DTurret.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Examples\Code\F3DDummyEvent.cs" />
+     <Compile Include="Assets\DownloadedAssets\Sci-Fi Effects\Examples\Code\F3DTrailExample.cs" />
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\ContrastStretchEffect.cs" />
@@ -185,7 +201,6 @@
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Top-DownSF\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Objects and Interactables\Weapon.cs" />
      <Compile Include="Assets\Scripts\Player Managers\AnimationManager.cs" />
      <Compile Include="Assets\Scripts\Player Managers\HUDManager.cs" />
      <Compile Include="Assets\Scripts\Player Managers\HealthManager.cs" />
@@ -203,10 +218,12 @@
      <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_Flat_Pro\ZFS_Flat_Pro_Shader_Controls.txt" />
      <None Include="Assets\DownloadedAssets\6by7\ProBuilder\changelog.txt" />
      <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\DiffuseVertexColor.shader" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\Billboard.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\DownloadedAssets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\Heat.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_Flat_Free.shader" />
@@ -220,6 +237,7 @@
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\Trail.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
@@ -229,6 +247,7 @@
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\DownloadedAssets\6by7\ProGrids\VersionInfo.txt" />
      <None Include="Assets\DownloadedAssets\Resources\Holographic\Scripts\unlitAlpha.shader" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\AlphaBlended.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\DownloadedAssets\6by7\ProBuilder\VersionInfo.txt" />
      <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_Flat_Free\ZFS_Flat_Free_Shader_Controls.txt" />
@@ -239,6 +258,7 @@
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\Surface.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\DownloadedAssets\6by7\ProBuilder\Shader\UnlitColor.shader" />
@@ -285,6 +305,7 @@
      <None Include="Assets\DownloadedAssets\ZFS_Shaders\Documentation\ZFS_3D_Pro\ZFS_3D_Pro_Shader_Controls.txt" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\DownloadedAssets\ZFS_Shaders\Shaders\ZFS_3D_Pro.shader" />
+     <None Include="Assets\DownloadedAssets\Sci-Fi Effects\Shaders\Additive.shader" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\DownloadedAssets\Photon Unity Networking\changelog.txt" />
      <None Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />

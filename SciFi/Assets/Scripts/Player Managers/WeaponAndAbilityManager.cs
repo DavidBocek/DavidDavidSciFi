@@ -164,6 +164,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 
 	//business logic of actually firing the weapon in the world
 	private void Shoot(){
+		//for innacuracy
 		justShot = true;
 		//project cone circle cap to the visible target
 		float distToTarget = 1000f;

@@ -1,13 +1,22 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\AmmoCountManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Companion Managers\CompanionAnimationManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="183" Column="62" />
+      <File FileName="Assets\Scripts\Companion Managers\CompanionAnimationManager.cs" Line="40" Column="2" />
+      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player Managers\AnimationManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player Managers\HealthManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player Managers\HUDManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player Managers\MovementManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\AmmoCountManager.cs" Line="43" Column="3" />
+      <File FileName="Assets\Scripts\UI\AmmoCountManager.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="258" Column="26" />
+      <File FileName="Assets\BulletMove.cs" Line="23" Column="50" />
+>>>>>>> ec549b5aa0d5b45b7a531fb14561922940d5f10c
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

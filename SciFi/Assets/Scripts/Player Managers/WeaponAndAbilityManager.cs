@@ -56,6 +56,19 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	private int curSMGBullets;
 	private int curRifleBullets;
 
+	//noisy vars
+	public Transform sourcePoint;
+	public AudioClip[] SMGNoises;
+	public AudioClip[] rifleNoises;
+
+	//visual effect vars
+	public GameObject rifleTrail;
+	public GameObject SMGTrail;
+	public GameObject rifleMuzz;
+	public GameObject SMGMuzz;
+	public GameObject[] rifleImpacts;
+	public GameObject[] SMGImpacts;
+
 	// Use this for initialization
 	void Start () {
 		isInSMGMode = true;
@@ -191,17 +204,17 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			animManager.SetSMGNotSniperBool(true);
 		}
 	}
-
 	//business logic of actually firing the weapon in the world
 	private void Shoot(){
 		//for innacuracy
 		justShot = true;
 		//project cone circle cap to the visible target
-		float distToTarget = 1000f;
+		float distToTarget = 100f;
 		RaycastHit rayHitInfo = new RaycastHit();
 		if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(.5f,.5f,0f)), out rayHitInfo, 1000f)){
 			distToTarget = rayHitInfo.distance;
 		}
+
 		//apply innacuracy to find actual shot trajectory
 		Vector2 shotConePoint = Random.insideUnitCircle * curShotConeRadius;
 		Vector3 shotConeWorldPoint = Camera.main.transform.position + 
@@ -222,15 +235,34 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 		movementManager.StartCoroutine("AdjustAimFromRecoil",recoilVector);
 
 		//deal with shooting effects
-		ActivateShootEffects(shotTrajectory);
+		ActivateShootEffects(distToTarget, rayHitInfo);
 
 		//debug
 		Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward*5f, Color.grey);
 		Debug.DrawRay(shotTrajectory.origin, shotTrajectory.direction*10f, Color.red);
 	}
 
-	private void ActivateShootEffects(Ray trajectory){
-		//play sounds and shoot particles and such
+	private void ActivateShootEffects(float dist, RaycastHit hitInfo)
+	{
+		if(isInSMGMode){
+			//sound effects
+			AudioSource.PlayClipAtPoint(SMGNoises[Random.Range (0,SMGNoises.Length)], sourcePoint.position);
+		} else {
+			//visual effects
+			GameObject tempBullet = (GameObject)GameObject.Instantiate(rifleTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.left), sourcePoint.rotation);
+			Destroy (tempBullet, dist/tempBullet.GetComponent<BulletMove>().speed);
+
+			GameObject flash = (GameObject)GameObject.Instantiate(rifleMuzz, sourcePoint.position, sourcePoint.rotation);
+			flash.transform.Rotate(Vector3.up, -90);
+			flash.transform.Rotate(Vector3.forward, Random.Range(0,91));
+			Destroy (flash, .05f);
+
+			GameObject impact = (GameObject)GameObject.Instantiate(rifleImpacts[Random.Range(0,rifleImpacts.Length)], hitInfo.point, Quaternion.Euler(hitInfo.normal));
+			impact.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+			Destroy(impact,.95f);
+			//sound effects
+			AudioSource.PlayClipAtPoint(rifleNoises[Random.Range (0,rifleNoises.Length)], sourcePoint.position);
+		}
 	}
 
 	private IEnumerator Reload(float reloadDelay){

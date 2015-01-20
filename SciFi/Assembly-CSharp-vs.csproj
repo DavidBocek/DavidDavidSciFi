@@ -200,6 +200,7 @@
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Top-DownSF\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Companion Managers\CompanionAnimationManager.cs" />
      <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\Weapon.cs" />
      <Compile Include="Assets\Scripts\Player Managers\AnimationManager.cs" />

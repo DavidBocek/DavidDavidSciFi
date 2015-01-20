@@ -4251,11 +4251,7 @@ MeshCollider:
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
-<<<<<<< HEAD
-  m_Mesh: {fileID: 1800422607}
-=======
   m_Mesh: {fileID: 558427746}
->>>>>>> ec549b5aa0d5b45b7a531fb14561922940d5f10c
 --- !u!114 &1429350496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4302,11 +4298,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429350494}
-<<<<<<< HEAD
-  m_Mesh: {fileID: 1800422607}
-=======
   m_Mesh: {fileID: 558427746}
->>>>>>> ec549b5aa0d5b45b7a531fb14561922940d5f10c
 --- !u!114 &1429350499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6606,8 +6598,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 491748438}
   m_GameObject: {fileID: 1990373782}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1999753017
 Prefab:
   m_ObjectHideFlags: 0

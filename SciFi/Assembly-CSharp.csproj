@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BulletMove.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Instantiation\ProBuilderInstantiate.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Runtime Editing\Materials\pb_Selection.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />

@@ -1,6 +1,16 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="140" Column="53" />
+      <File FileName="Assets\ImpactNoise.cs" Line="22" Column="62" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> b8331deb93e57f6d9fef05d7b87e90b8a59a41c6
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

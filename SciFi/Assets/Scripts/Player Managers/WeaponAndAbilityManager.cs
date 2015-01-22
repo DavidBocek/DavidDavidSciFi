@@ -60,6 +60,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	public Transform sourcePoint;
 	public AudioClip[] SMGNoises;
 	public AudioClip[] rifleNoises;
+	public AudioClip noAmmo;
+	public AudioClip noClips;
 
 	//visual effect vars
 	public GameObject rifleTrail;
@@ -127,28 +129,34 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 					StartCoroutine("Reload", reloadAnimationDelay);
 				}
 				else{
-					//TODO: Play click sound
+					AudioSource.PlayClipAtPoint(noClips, sourcePoint.position);
 				}
 			}
 			if (isInSMGMode && isSMGInBurstMode){
-				if (Input.GetButtonDown("Fire1") && curSMGBullets > 0){
-					StartCoroutine("FireBurst", SMGShotCooldown);
-				} else if(curSMGBullets <= 0){
-					//TODO: Play click sound
+				if (Input.GetButtonDown("Fire1")){
+					if(curSMGBullets > 0){
+						StartCoroutine("FireBurst", SMGShotCooldown);
+					} else {
+						sourcePoint.GetComponent<AudioSource>().Play();
+					}
 				}
-			} else if (isInSMGMode && !isSMGInBurstMode && curSMGBullets > 0){
+			} else if (isInSMGMode && !isSMGInBurstMode){
 				if (Input.GetButton("Fire1")){
-					StartCoroutine("FireOneShot", SMGShotCooldown);
-					curSMGBullets--;
-				} else if(curSMGBullets <= 0){
-					//TODO: Play click sound
+					if(curSMGBullets>0){
+						StartCoroutine("FireOneShot", SMGShotCooldown);
+						curSMGBullets--;
+					} else if (Input.GetButtonDown("Fire1") && curSMGBullets<=0) {
+						AudioSource.PlayClipAtPoint(noAmmo, sourcePoint.position);
+					}
 				}
 			} else if (!isInSMGMode){
-				if (Input.GetButtonDown("Fire1") && curRifleBullets > 0){
-					StartCoroutine("FireOneShot", RifleShotCooldown);
-					curRifleBullets--;
-				} else if(curRifleBullets <= 0){
-					//TODO: Play click sound
+				if(Input.GetButtonDown("Fire1")){
+					if (curRifleBullets > 0){
+						StartCoroutine("FireOneShot", RifleShotCooldown);
+						curRifleBullets--;
+					} else if(curRifleBullets <= 0){
+						AudioSource.PlayClipAtPoint(noAmmo, sourcePoint.position);
+					}
 				}
 			}
 			
@@ -245,6 +253,27 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	private void ActivateShootEffects(float dist, RaycastHit hitInfo)
 	{
 		if(isInSMGMode){
+			//visual effects
+			GameObject tempBullet = (GameObject)GameObject.Instantiate(SMGTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.left), sourcePoint.rotation);
+			Destroy (tempBullet, dist/tempBullet.GetComponent<BulletMove>().speed);
+			
+			GameObject flash = (GameObject)GameObject.Instantiate(SMGMuzz, sourcePoint.position - .05f * sourcePoint.TransformDirection(Vector3.left), sourcePoint.rotation);
+			flash.transform.Rotate(Vector3.up, -90);
+			flash.transform.Rotate(Vector3.forward, Random.Range(0,91));
+			Destroy (flash, .05f);
+
+			if(dist < 100f)
+			{
+				GameObject impact = (GameObject)GameObject.Instantiate(SMGImpacts[Random.Range(0,SMGImpacts.Length)], hitInfo.point, Quaternion.Euler(hitInfo.normal));
+				impact.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+				Destroy(impact,.95f);
+
+				ImpactNoise impactNoise = hitInfo.collider.gameObject.GetComponent<ImpactNoise>();
+				if(impactNoise != null){
+					impactNoise.makeNoise(hitInfo.point, isInSMGMode);
+				}
+			}
+
 			//sound effects
 			AudioSource.PlayClipAtPoint(SMGNoises[Random.Range (0,SMGNoises.Length)], sourcePoint.position);
 		} else {
@@ -257,9 +286,18 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			flash.transform.Rotate(Vector3.forward, Random.Range(0,91));
 			Destroy (flash, .05f);
 
-			GameObject impact = (GameObject)GameObject.Instantiate(rifleImpacts[Random.Range(0,rifleImpacts.Length)], hitInfo.point, Quaternion.Euler(hitInfo.normal));
-			impact.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
-			Destroy(impact,.95f);
+			if(dist < 100f)
+			{
+				GameObject impact = (GameObject)GameObject.Instantiate(rifleImpacts[Random.Range(0,rifleImpacts.Length)], hitInfo.point, Quaternion.Euler(hitInfo.normal));
+				impact.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+				Destroy(impact,.95f);
+
+				ImpactNoise impactNoise = hitInfo.collider.gameObject.GetComponent<ImpactNoise>();
+				if(impactNoise != null){
+					impactNoise.makeNoise(hitInfo.point, isInSMGMode);
+				}
+			}
+
 			//sound effects
 			AudioSource.PlayClipAtPoint(rifleNoises[Random.Range (0,rifleNoises.Length)], sourcePoint.position);
 		}

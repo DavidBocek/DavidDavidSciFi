@@ -204,6 +204,7 @@
      <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\BulletMove.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\ImpactNoise.cs" />
+     <Compile Include="Assets\Scripts\Objects and Interactables\LightsOut.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\Weapon.cs" />
      <Compile Include="Assets\Scripts\Player Managers\AnimationManager.cs" />
      <Compile Include="Assets\Scripts\Player Managers\HUDManager.cs" />

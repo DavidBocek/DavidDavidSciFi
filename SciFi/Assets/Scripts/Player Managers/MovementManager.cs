@@ -81,7 +81,7 @@ public class MovementManager : MonoBehaviour {
 		float amountToMoveY = SPlayerSettings.invertMouse ? -mouseY*mouseYSensitivity : mouseY*mouseYSensitivity;
 		amountToMoveY *= isAiming ? SPlayerSettings.mouseSensitivity*aimingMouseMultiplier : SPlayerSettings.mouseSensitivity;
 		goalCamRot.x += amountToMoveY;
-		if (goalCamRot.x < 275f && goalCamRot.x > 180f){goalCamRot.x = 275.0f;}
+		if (goalCamRot.x < 265f && goalCamRot.x > 180f){goalCamRot.x = 265.0f;}
 		else if (goalCamRot.x > 80f && goalCamRot.x< 180f){goalCamRot.x = 80.0f;}
 		playerCameraObj.transform.localEulerAngles = goalCamRot;
 	}
@@ -89,7 +89,12 @@ public class MovementManager : MonoBehaviour {
 	public IEnumerator AdjustAimFromRecoil(Vector2 recoilVector){
 		for (float i=0f; i<1f; i+=Time.deltaTime/.15f){
 			transform.Rotate(Vector3.up, recoilVector.x*.15f);
-			playerCameraObj.transform.Rotate(Vector3.right, -recoilVector.y*.15f);
+			Vector3 goalCamRot = playerCameraObj.transform.localEulerAngles;
+			float amountToMoveY = recoilVector.y*.15f;
+			goalCamRot.x -= amountToMoveY;
+			if (goalCamRot.x < 265f && goalCamRot.x > 180f){goalCamRot.x = 265.0f;}
+			else if (goalCamRot.x > 80f && goalCamRot.x< 180f){goalCamRot.x = 80.0f;}
+			playerCameraObj.transform.localEulerAngles = goalCamRot;
 			yield return null;
 		}
 	}

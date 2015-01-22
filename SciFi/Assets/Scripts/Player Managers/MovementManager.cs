@@ -11,6 +11,8 @@ public class MovementManager : MonoBehaviour {
 	public float mouseXSensitivity;
 	public float mouseYSensitivity;
 	public float aimingMouseMultiplier;
+	public float maxSprintTime;
+	public float sprintRegenMultiplier;
 	//aiming gun animation vars
 	public GameObject armsAndGunModelRoot;
 	public Transform aimingGunTransform;
@@ -25,6 +27,8 @@ public class MovementManager : MonoBehaviour {
 	private Vector3 inputDir = Vector3.zero;
 	private Vector3 curVel = Vector3.zero;
 	private bool isSprinting = false;
+	private float curSprintTime;
+	private bool canSprint = true;
 	private bool isAiming { get{ return weapManager.isAiming;}}
 
 	// Use this for initialization
@@ -36,6 +40,8 @@ public class MovementManager : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		capsuleCollider = GetComponent<CapsuleCollider>();
 		playerCameraObj = GetComponentInChildren<Camera>().gameObject;
+
+		curSprintTime = maxSprintTime;
 	}
 	
 	// Update is called once per frame
@@ -43,8 +49,19 @@ public class MovementManager : MonoBehaviour {
 		if (isAiming){
 			isSprinting = false;
 		} else {
-			isSprinting = Input.GetButton("Sprint");
+			isSprinting = Input.GetButton("Sprint") && canSprint;
 		}
+
+		if (curSprintTime <= 0 && canSprint){
+			StartCoroutine("DelaySprint");
+		}
+		if (isSprinting){
+			curSprintTime -= Time.smoothDeltaTime;
+		} else {
+			curSprintTime += Time.smoothDeltaTime * sprintRegenMultiplier;
+			curSprintTime = Mathf.Min(curSprintTime, maxSprintTime);
+		}
+
 		UpdateAiming();
 	}
 
@@ -121,6 +138,12 @@ public class MovementManager : MonoBehaviour {
 			armsAndGunModelRoot.transform.localPosition -= aimingGunPositionChange/5f;
 			yield return null;
 		}
+	}
+
+	private IEnumerator DelaySprint(){
+		canSprint = false;
+		yield return new WaitForSeconds(2f);
+		canSprint = true;
 	}
 }
 

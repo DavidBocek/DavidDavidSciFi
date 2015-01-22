@@ -63,6 +63,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	public AudioClip noAmmo;
 	public AudioClip noClips;
 	public AudioClip reloadAudio;
+	public AudioClip toRifle;
+	public AudioClip toSMG;
 
 	//visual effect vars
 	public GameObject rifleTrail;
@@ -91,14 +93,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log ("SMG: " + curSMGBullets + " Rifle: " + curRifleBullets + " Clips: " + curClips);
-		if (Input.GetButtonDown("SwitchGunMode")){
-			isInSMGMode = !isInSMGMode;
-			if (isAiming){
-				isAiming = false;
-				movementManager.StartCoroutine("StopAimingAnimation");
-			}
-			StartCoroutine("DelayShooting", gunModeSwitchDelay);
-		}
+
 		if (Input.GetButtonDown("AimDownSights")){
 			if (!isAiming){
 				StartCoroutine("Aim");
@@ -111,6 +106,17 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 		}
 		
 		if (canShoot){
+			if (Input.GetButtonDown("SwitchGunMode")){
+				sourcePoint.audio.clip = isInSMGMode ? toRifle : toSMG;
+				sourcePoint.GetComponent<AudioSource>().Play ();
+				isInSMGMode = !isInSMGMode;
+				if (isAiming){
+					isAiming = false;
+					movementManager.StartCoroutine("StopAimingAnimation");
+				}
+				StartCoroutine("DelayShooting", gunModeSwitchDelay);
+			}
+
 			if (Input.GetButtonDown ("Melee")){
 				if (isAiming){
 					isAiming = false;

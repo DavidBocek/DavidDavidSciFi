@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="140" Column="53" />
+      <File FileName="Assets\Scripts\Player Managers\WeaponAndAbilityManager.cs" Line="229" Column="79" />
       <File FileName="Assets\ImpactNoise.cs" Line="22" Column="62" />
+      <File FileName="Assets\BulletMove.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

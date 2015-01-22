@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BulletMove.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Instantiation\ProBuilderInstantiate.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Runtime Editing\Materials\pb_Selection.cs" />
      <Compile Include="Assets\DownloadedAssets\6by7\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
@@ -201,9 +200,11 @@
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
      <Compile Include="Assets\DownloadedAssets\Top-DownSF\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\ImpactNoise.cs" />
      <Compile Include="Assets\Scripts\Companion Managers\CompanionAnimationManager.cs" />
      <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Objects and Interactables\BulletMove.cs" />
+     <Compile Include="Assets\Scripts\Objects and Interactables\ImpactNoise.cs" />
+     <Compile Include="Assets\Scripts\Objects and Interactables\LightsOut.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\Weapon.cs" />
      <Compile Include="Assets\Scripts\Player Managers\AnimationManager.cs" />
      <Compile Include="Assets\Scripts\Player Managers\HUDManager.cs" />

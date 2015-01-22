@@ -62,6 +62,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	public AudioClip[] rifleNoises;
 	public AudioClip noAmmo;
 	public AudioClip noClips;
+	public AudioClip reloadAudio;
 
 	//visual effect vars
 	public GameObject rifleTrail;
@@ -125,11 +126,14 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 				}
 				if(curClips > 0){
 					animManager.TriggerReload();
+					sourcePoint.audio.clip = reloadAudio;
+					sourcePoint.GetComponent<AudioSource>().Play();
 					StartCoroutine("DelayShooting",reloadAnimationDelay);
 					StartCoroutine("Reload", reloadAnimationDelay);
 				}
 				else{
-					AudioSource.PlayClipAtPoint(noClips, sourcePoint.position);
+					sourcePoint.audio.clip = noClips;
+					sourcePoint.GetComponent<AudioSource>().Play();
 				}
 			}
 			if (isInSMGMode && isSMGInBurstMode){
@@ -137,6 +141,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 					if(curSMGBullets > 0){
 						StartCoroutine("FireBurst", SMGShotCooldown);
 					} else {
+						sourcePoint.audio.clip = noAmmo;
 						sourcePoint.GetComponent<AudioSource>().Play();
 					}
 				}
@@ -146,7 +151,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 						StartCoroutine("FireOneShot", SMGShotCooldown);
 						curSMGBullets--;
 					} else if (Input.GetButtonDown("Fire1") && curSMGBullets<=0) {
-						AudioSource.PlayClipAtPoint(noAmmo, sourcePoint.position);
+						sourcePoint.audio.clip = noAmmo;
+						sourcePoint.GetComponent<AudioSource>().Play();
 					}
 				}
 			} else if (!isInSMGMode){
@@ -155,7 +161,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 						StartCoroutine("FireOneShot", RifleShotCooldown);
 						curRifleBullets--;
 					} else if(curRifleBullets <= 0){
-						AudioSource.PlayClipAtPoint(noAmmo, sourcePoint.position);
+						sourcePoint.audio.clip = noAmmo;
+						sourcePoint.GetComponent<AudioSource>().Play();
 					}
 				}
 			}

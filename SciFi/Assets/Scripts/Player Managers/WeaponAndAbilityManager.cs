@@ -38,6 +38,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 	private AnimationManager animManager;
 	private HUDManager hudManager;
 	private MovementManager movementManager;
+	private PlayerNetworkManager networkManager;
 
 	private bool canShoot = true;
 	private bool justShot = false;
@@ -84,6 +85,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 		animManager = GetComponent<AnimationManager>();
 		hudManager = GetComponent<HUDManager>();
 		movementManager = GetComponent<MovementManager>();
+		networkManager = GetComponentInParent<PlayerNetworkManager>();
 
 		curClips = maxClips;
 		curSMGBullets = SMGBulletsPerClip;

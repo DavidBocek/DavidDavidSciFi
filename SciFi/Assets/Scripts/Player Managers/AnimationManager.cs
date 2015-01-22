@@ -18,6 +18,7 @@ public class AnimationManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
+
 		ShootOneTriggerId = Animator.StringToHash("ShootOneTrigger");
 		MeleeTriggerId = Animator.StringToHash("MeleeTrigger");
 		CurSpeedScaledId = Animator.StringToHash("CurSpeedScaled");

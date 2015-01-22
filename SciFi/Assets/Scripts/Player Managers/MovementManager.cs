@@ -20,6 +20,7 @@ public class MovementManager : MonoBehaviour {
 
 	private AnimationManager animManager;
 	private WeaponAndAbilityManager weapManager;
+	private PlayerNetworkManager networkManager;
 	private Rigidbody rb;
 	private CapsuleCollider capsuleCollider;
 	private GameObject playerCameraObj;
@@ -37,6 +38,7 @@ public class MovementManager : MonoBehaviour {
 
 		animManager = GetComponent<AnimationManager>();
 		weapManager = GetComponent<WeaponAndAbilityManager>();
+		networkManager = GetComponentInParent<PlayerNetworkManager>();
 		rb = GetComponent<Rigidbody>();
 		capsuleCollider = GetComponent<CapsuleCollider>();
 		playerCameraObj = GetComponentInChildren<Camera>().gameObject;
@@ -69,13 +71,16 @@ public class MovementManager : MonoBehaviour {
 		UpdateRigidbodyPosition();
 		animManager.SetCurSpeedScaledFloat(curVel.magnitude/(movementSpeed+.00000001f));	//avoid dividing by 0 errors
 		animManager.SetSprintingBool(isSprinting);
+
+		//network
+		networkManager.UpdateVelocityValues((curVel.normalized)/(movementSpeed+.00000001f));
+		networkManager.UpdateSprinting(isSprinting);
 	}
 
 	void UpdateRigidbodyPosition(){
 		inputDir.x = Input.GetAxisRaw("Horizontal");
 		inputDir.z = Input.GetAxisRaw("Vertical");
 		inputDir.Normalize();
-		inputDir = transform.TransformDirection(inputDir);
 		if (inputDir.sqrMagnitude > 0){
 			//slow accel for moving, but not slow to stop (it feels weird)
 			if (isAiming){
@@ -87,6 +92,8 @@ public class MovementManager : MonoBehaviour {
 			}
 		}
 		curVel = inputDir;
+		inputDir = transform.TransformDirection(inputDir);
+
 		rb.AddForce(inputDir - rb.velocity,ForceMode.VelocityChange);
 		//apply gravity if nothing is below us
 		if (!Physics.Raycast(transform.position+capsuleCollider.center, Vector3.down, capsuleCollider.height/2f)){

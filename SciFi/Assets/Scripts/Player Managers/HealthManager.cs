@@ -9,11 +9,13 @@ public class HealthManager : MonoBehaviour {
 	private float curHealth;
 
 	private HUDManager hudManager;
+	private PlayerNetworkManager networkManager;
 
 	// Use this for initialization
 	void Start () {
 		curHealth = maxHealth;
 		hudManager = GetComponent<HUDManager>();
+		networkManager = GetComponentInParent<PlayerNetworkManager>();
 	}
 
 	void FixedUpdate () {

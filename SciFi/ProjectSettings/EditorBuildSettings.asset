@@ -31,7 +31,7 @@ EditorBuildSettings:
     path: Assets/DownloadedAssets/Photon Unity Networking/Demos/DemoWorker/DemoWorkerGame-Scene.unity
   - enabled: 0
     path: Assets/DownloadedAssets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/MarcoPolo-Scene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/testmultiplayerscene.unity
   - enabled: 1
     path: Assets/Scene1.unity

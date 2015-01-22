@@ -13,16 +13,18 @@ public class AmmoCountManager : MonoBehaviour {
 	public float degreesPerSMGBullet;
 	public Transform rifleBulletsStartTransform;
 	public float degreesPerRifleBullet;
-
+	
 	private int curClipCount, curSMGBullets, curRifleBullets;
 	private List<GameObject> SMGBulletObjs;
 	private List<GameObject> rifleBulletObjs;
+	private GameObject attachedPlayer;
+	public GameObject AttachedPlayer { get{return attachedPlayer;} set{attachedPlayer = value;}}
 
 	//initialization
 	void Start(){
 		SMGBulletObjs = new List<GameObject>();
 		rifleBulletObjs = new List<GameObject>();
-		for (int i=0; i<GameObject.FindWithTag("Player").GetComponent<WeaponAndAbilityManager>().SMGBulletsPerClip; i++){
+		for (int i=0; i</*player.GetComponent<WeaponAndAbilityManager>().SMGBulletsPerClip*/30; i++){
 			GameObject newBulletObj = (GameObject) Instantiate(SMGBulletsObj, SMGBulletsStartTransform.position, SMGBulletsStartTransform.rotation);
 			newBulletObj.transform.localEulerAngles = new Vector3(0f,0f,45f);
 			newBulletObj.transform.Rotate(Vector3.forward, degreesPerSMGBullet*i);
@@ -31,7 +33,7 @@ public class AmmoCountManager : MonoBehaviour {
 			newBulletObj.SetActive(false);
 			SMGBulletObjs.Add(newBulletObj);
 		}
-		for (int i=0; i<GameObject.FindWithTag("Player").GetComponent<WeaponAndAbilityManager>().rifleBulletsPerClip; i++){
+		for (int i=0; i</*player.GetComponent<WeaponAndAbilityManager>().rifleBulletsPerClip*/10; i++){
 			GameObject newBulletObj = (GameObject) Instantiate(rifleBulletsObj, rifleBulletsStartTransform.position, rifleBulletsStartTransform.rotation);
 			newBulletObj.transform.localEulerAngles = new Vector3(0f,0f,-40f);
 			newBulletObj.transform.Rotate(Vector3.forward, degreesPerRifleBullet*i);

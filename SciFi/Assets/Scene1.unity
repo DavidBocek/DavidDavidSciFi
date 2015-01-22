@@ -574,7 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1787,14 +1786,17 @@ MonoBehaviour:
   rifleNoises:
   - {fileID: 8300000, guid: a8bd6c1598e010443ae8a060e2fb9839, type: 3}
   - {fileID: 8300000, guid: dd339bdbf714c874abd1b5430c2f37eb, type: 3}
+  noAmmo: {fileID: 8300000, guid: 6897bcb188e4dfe4a8b9892269450696, type: 3}
+  noClips: {fileID: 8300000, guid: 6765e3e1519e6754c8c4566b8527ad0b, type: 3}
   rifleTrail: {fileID: 175880, guid: 507b46f48f2458f438e13c2cfed19016, type: 2}
-  SMGTrail: {fileID: 0}
+  SMGTrail: {fileID: 132782, guid: 1ad6bcc25fe98924faade457f0fee39b, type: 2}
   rifleMuzz: {fileID: 100000, guid: 170838e8060e02542afa9f81e59fed08, type: 2}
   SMGMuzz: {fileID: 100004, guid: 201390457f7593b4f9c33fbb0da30117, type: 2}
   rifleImpacts:
   - {fileID: 100002, guid: 615b583080b2f7140b3c3d9d5315c9f1, type: 2}
   - {fileID: 100004, guid: bdd51dd6774dbd84fa323b9403267a70, type: 2}
-  SMGImpacts: []
+  SMGImpacts:
+  - {fileID: 100004, guid: 572f75a4fe7fccb418203dfcddc43cb3, type: 2}
 --- !u!1 &544622050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,12 +1881,12 @@ Transform:
   - {fileID: 333112619}
   m_Father: {fileID: 1178701642}
   m_RootOrder: 0
---- !u!43 &558427746
+--- !u!43 &581312156
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh38066
+  m_Name: pb_Mesh44368
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -3466,6 +3468,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1136202481}
+  - 82: {fileID: 1136202482}
   m_Layer: 0
   m_Name: b_muzzle
   m_TagString: Untagged
@@ -3485,6 +3488,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 742951181}
   m_RootOrder: 8
+--- !u!82 &1136202482
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136202480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 6897bcb188e4dfe4a8b9892269450696, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1146965630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,6 +4232,7 @@ GameObject:
   - 23: {fileID: 1429350497}
   - 114: {fileID: 1429350496}
   - 64: {fileID: 1429350495}
+  - 114: {fileID: 1429350501}
   m_Layer: 0
   m_Name: pb-Cube[Detail]-5224
   m_TagString: Untagged
@@ -4190,7 +4252,7 @@ MeshCollider:
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
-  m_Mesh: {fileID: 558427746}
+  m_Mesh: {fileID: 581312156}
 --- !u!114 &1429350496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4237,7 +4299,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429350494}
-  m_Mesh: {fileID: 558427746}
+  m_Mesh: {fileID: 581312156}
 --- !u!114 &1429350499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4622,6 +4684,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1429350501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429350494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac911d8fd6353b4d91cd8b2527683eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rifleNoiseFX:
+  - {fileID: 8300000, guid: 4e6abf7c3e3fb594bb0fdd6dbd713716, type: 3}
+  - {fileID: 8300000, guid: 390e6d5686f9f034bb094a074d154504, type: 3}
+  SMGNoiseFX:
+  - {fileID: 8300000, guid: b12187930d6f4b04b8a14c4e942c7f93, type: 3}
+  - {fileID: 8300000, guid: ee945bf47a1d77342b0e71d7e4421695, type: 3}
+  - {fileID: 8300000, guid: 4baa43d1a2555714a9dcc3b0b06a220c, type: 3}
 --- !u!1 &1429479834
 GameObject:
   m_ObjectHideFlags: 0

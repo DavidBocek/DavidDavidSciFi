@@ -59,6 +59,10 @@ public class HUDManager : MonoBehaviour {
 		ammoCountManager.UpdateRifleAmmoCount(rifleAmmoCount);
 	}
 
+	public void UpdateHealthEffects(float curHealth){
+		//TODO
+	}
+
 	private void HideCrosshairs(){
 		rifleCrosshairsObj.SetActive(false);
 		SMGCrosshairsObj.SetActive(false);

@@ -133,13 +133,13 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 				if(curClips > 0){
 					animManager.TriggerReload();
 					sourcePoint.audio.clip = reloadAudio;
-					sourcePoint.GetComponent<AudioSource>().Play();
+					sourcePoint.audio.Play();
 					StartCoroutine("DelayShooting",reloadAnimationDelay);
 					StartCoroutine("Reload", reloadAnimationDelay);
 				}
 				else{
 					sourcePoint.audio.clip = noClips;
-					sourcePoint.GetComponent<AudioSource>().Play();
+					sourcePoint.audio.Play();
 				}
 			}
 			if (isInSMGMode && isSMGInBurstMode){
@@ -148,7 +148,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 						StartCoroutine("FireBurst", SMGShotCooldown);
 					} else {
 						sourcePoint.audio.clip = noAmmo;
-						sourcePoint.GetComponent<AudioSource>().Play();
+						sourcePoint.audio.Play();
 					}
 				}
 			} else if (isInSMGMode && !isSMGInBurstMode){
@@ -158,7 +158,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 						curSMGBullets--;
 					} else if (Input.GetButtonDown("Fire1") && curSMGBullets<=0) {
 						sourcePoint.audio.clip = noAmmo;
-						sourcePoint.GetComponent<AudioSource>().Play();
+						sourcePoint.audio.Play();
 					}
 				}
 			} else if (!isInSMGMode){
@@ -168,7 +168,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 						curRifleBullets--;
 					} else if(curRifleBullets <= 0){
 						sourcePoint.audio.clip = noAmmo;
-						sourcePoint.GetComponent<AudioSource>().Play();
+						sourcePoint.audio.Play();
 					}
 				}
 			}
@@ -295,7 +295,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			}
 
 			//sound effects
-			AudioSource.PlayClipAtPoint(SMGNoises[Random.Range (0,SMGNoises.Length)], sourcePoint.position);
+			sourcePoint.audio.clip = SMGNoises[Random.Range (0,SMGNoises.Length)];
+			sourcePoint.audio.Play();
 		} else {
 			//visual effects
 			GameObject tempBullet = (GameObject)GameObject.Instantiate(rifleTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.forward), bullRot);
@@ -318,7 +319,8 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			}
 
 			//sound effects
-			AudioSource.PlayClipAtPoint(rifleNoises[Random.Range (0,rifleNoises.Length)], sourcePoint.position);
+			sourcePoint.audio.clip = rifleNoises[Random.Range (0,rifleNoises.Length)];
+			sourcePoint.audio.Play();
 		}
 	}
 

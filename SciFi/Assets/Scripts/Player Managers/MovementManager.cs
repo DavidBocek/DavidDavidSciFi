@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MovementManager : MonoBehaviour {
 
+	private const float GRAVITY_FORCE = 300f;
+
 	public float movementSpeed;
 	public float sprintMultiplier;
 	public float aimingMultiplier;
@@ -17,6 +19,7 @@ public class MovementManager : MonoBehaviour {
 	private AnimationManager animManager;
 	private WeaponAndAbilityManager weapManager;
 	private Rigidbody rb;
+	private CapsuleCollider capsuleCollider;
 	private GameObject playerCameraObj;
 
 	private Vector3 inputDir = Vector3.zero;
@@ -31,6 +34,7 @@ public class MovementManager : MonoBehaviour {
 		animManager = GetComponent<AnimationManager>();
 		weapManager = GetComponent<WeaponAndAbilityManager>();
 		rb = GetComponent<Rigidbody>();
+		capsuleCollider = GetComponent<CapsuleCollider>();
 		playerCameraObj = GetComponentInChildren<Camera>().gameObject;
 	}
 	
@@ -67,6 +71,10 @@ public class MovementManager : MonoBehaviour {
 		}
 		curVel = inputDir;
 		rb.AddForce(inputDir - rb.velocity,ForceMode.VelocityChange);
+		//apply gravity if nothing is below us
+		if (!Physics.Raycast(transform.position+capsuleCollider.center, Vector3.down, capsuleCollider.height/2f)){
+			rb.AddForce(Vector3.down*GRAVITY_FORCE,ForceMode.Acceleration);
+		}
 	}
 
 	void UpdateAiming(){

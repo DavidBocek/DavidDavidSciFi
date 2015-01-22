@@ -23,21 +23,17 @@ public class PlayerSpawnNetworkManager : Photon.MonoBehaviour {
 		Transform spawnTransform = spawnTransforms[Random.Range(0,spawnTransforms.Length)];
 
 		int id = PhotonNetwork.AllocateViewID();
-		SpawnLocalPlayer(spawnTransform.position, spawnTransform.rotation);
+		SpawnLocalPlayer(spawnTransform.position, spawnTransform.rotation, id);
 		view.RPC("SpawnPlayerProxy", PhotonTargets.OthersBuffered, PhotonNetwork.player, spawnTransform.position, spawnTransform.rotation, id);
 	}
 	
-	void SpawnLocalPlayer(Vector3 spawnPosition, Quaternion spawnRotation){
+	void SpawnLocalPlayer(Vector3 spawnPosition, Quaternion spawnRotation, int id){
 		Debug.Log ("spawning self "+PhotonNetwork.player+" at: "+spawnPosition);
 		GameObject HUD = (GameObject) Instantiate(HUDObj);
-		foreach (PhotonView view in HUD.GetComponentsInChildren<PhotonView>()){
-			view.viewID = PhotonNetwork.AllocateViewID();
-		}
+		HUD.GetComponent<PhotonView>().viewID = PhotonNetwork.AllocateViewID();
 
 		GameObject newPlayer = (GameObject) Instantiate(playerObj, spawnPosition, spawnRotation);
-		foreach (PhotonView view in newPlayer.GetComponentsInChildren<PhotonView>()){
-			view.viewID = PhotonNetwork.AllocateViewID();
-		}
+		newPlayer.GetComponent<PhotonView>().viewID = id;
 
 		HUDManager playerHUDManager = newPlayer.GetComponentInChildren<HUDManager>();
 		playerHUDManager.ammoCounterObj = HUD.GetComponentInChildren<AmmoCountManager>().gameObject;
@@ -51,9 +47,8 @@ public class PlayerSpawnNetworkManager : Photon.MonoBehaviour {
 	void SpawnPlayerProxy(PhotonPlayer player, Vector3 spawnPosition, Quaternion spawnRotation, int id){
 		Debug.Log ("spawning proxy for " +player+" at: "+spawnPosition);
 		GameObject newPlayer = (GameObject) Instantiate(playerObj, spawnPosition, spawnRotation);
-		foreach (PhotonView view in newPlayer.GetComponentsInChildren<PhotonView>()){
-			view.viewID = id;
-		}
+		newPlayer.GetComponent<PhotonView>().viewID = id;
+
 		newPlayer.GetComponent<PlayerNetworkManager>().SetUpProxyCompanion();
 	}
 }

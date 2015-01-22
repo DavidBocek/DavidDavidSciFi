@@ -1819,7 +1819,6 @@ GameObject:
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400012}
-  - 114: {fileID: 11400018}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Player
@@ -5881,6 +5880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36e2b00ee6b39047b88ed93f91553b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMeleeTriggered: 0
+  isReloadTriggered: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5927,8 +5928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6470ea5189dda094cbe3300c8c0ae2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4.25
-  sprintMultiplier: 1.5
+  movementSpeed: 3.25
+  sprintMultiplier: 1.75
   aimingMultiplier: .400000006
   mouseXSensitivity: 1
   mouseYSensitivity: -1
@@ -6024,17 +6025,6 @@ MonoBehaviour:
   - {fileID: 100004, guid: bdd51dd6774dbd84fa323b9403267a70, type: 2}
   SMGImpacts:
   - {fileID: 100004, guid: 572f75a4fe7fccb418203dfcddc43cb3, type: 2}
---- !u!114 &11400018
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a36e2b00ee6b39047b88ed93f91553b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

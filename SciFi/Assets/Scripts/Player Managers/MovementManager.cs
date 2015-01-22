@@ -26,8 +26,8 @@ public class MovementManager : MonoBehaviour {
 	private GameObject playerCameraObj;
 
 	private Vector3 inputDir = Vector3.zero;
-	private Vector3 curVel = Vector3.zero;
-	private bool isSprinting = false;
+	private Vector3 curVel = Vector3.zero; public Vector3 CurVel {get {return curVel;}}
+	private bool isSprinting = false; public bool IsSprinting {get {return isSprinting;}}
 	private float curSprintTime;
 	private bool canSprint = true;
 	private bool isAiming { get{ return weapManager.isAiming;}}
@@ -71,10 +71,6 @@ public class MovementManager : MonoBehaviour {
 		UpdateRigidbodyPosition();
 		animManager.SetCurSpeedScaledFloat(curVel.magnitude/(movementSpeed+.00000001f));	//avoid dividing by 0 errors
 		animManager.SetSprintingBool(isSprinting);
-
-		//network
-		networkManager.UpdateVelocityValues((curVel.normalized)/(movementSpeed+.00000001f));
-		networkManager.UpdateSprinting(isSprinting);
 	}
 
 	void UpdateRigidbodyPosition(){

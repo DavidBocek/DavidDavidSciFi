@@ -28,6 +28,8 @@ public class AnimationManager : MonoBehaviour {
 		ShootBurstTriggerId = Animator.StringToHash("ShootBurstTrigger");
 		IsAimingId = Animator.StringToHash("IsAiming");
 		ReloadTriggerId = Animator.StringToHash("ReloadTrigger");
+
+		anim.SetBool(IsSMGNotSniperId, true);
 	}
 	
 	public void TriggerOneShot(){

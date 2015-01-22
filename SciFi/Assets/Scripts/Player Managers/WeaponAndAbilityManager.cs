@@ -125,6 +125,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 					movementManager.StartCoroutine("StopAimingAnimation");
 				}
 				animManager.TriggerMelee();
+				networkManager.TriggerMeleeAnimation();
 				StartCoroutine("DelayShooting",meleeAnimationDelay);
 			}
 			if (Input.GetButtonDown("Reload")){
@@ -134,6 +135,7 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 				}
 				if(curClips > 0){
 					animManager.TriggerReload();
+					networkManager.TriggerReloadAnimation();
 					sourcePoint.audio.clip = reloadAudio;
 					sourcePoint.audio.Play();
 					StartCoroutine("DelayShooting",reloadAnimationDelay);

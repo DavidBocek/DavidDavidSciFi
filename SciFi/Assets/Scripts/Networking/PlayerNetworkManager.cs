@@ -60,8 +60,8 @@ public class PlayerNetworkManager : Photon.MonoBehaviour {
 			isSprinting = movementManager.IsSprinting;
 		} else {
 			//proxy
-			movementObj.transform.position = Vector3.Lerp(movementObj.transform.position, goalPosition + Vector3.up*0.145152f, .3f);	//adjust for the small difference between positions of the companion avatar and player hands
-			movementObj.transform.rotation = Quaternion.Lerp(movementObj.transform.rotation, goalRotation, .3f);
+			transform.position = Vector3.Lerp(transform.position, goalPosition + Vector3.up*0.145152f, .3f);	//adjust for the small difference between positions of the companion avatar and player hands
+			transform.rotation = Quaternion.Lerp(transform.rotation, goalRotation, .3f);
 			companionAnimManager.SetCurSpeedScaledFloat(curVelScaled.magnitude);
 			companionAnimManager.SetCurVelScaledXFloat(curVelScaled.x);
 			companionAnimManager.SetCurVelScaledZFloat(curVelScaled.z);

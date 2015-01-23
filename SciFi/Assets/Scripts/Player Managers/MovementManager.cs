@@ -92,7 +92,7 @@ public class MovementManager : MonoBehaviour {
 
 		rb.AddForce(inputDir - rb.velocity,ForceMode.VelocityChange);
 		//apply gravity if nothing is below us
-		if (!Physics.Raycast(transform.position+capsuleCollider.center, Vector3.down, capsuleCollider.height/2f)){
+		if (!Physics.Raycast(transform.position+capsuleCollider.center, Vector3.down, capsuleCollider.height/2f+.2f)){
 			rb.AddForce(Vector3.down*GRAVITY_FORCE,ForceMode.Acceleration);
 		}
 	}

@@ -24,7 +24,7 @@ public class PlayerSpawnNetworkManager : Photon.MonoBehaviour {
 
 		int id = PhotonNetwork.AllocateViewID();
 		SpawnLocalPlayer(spawnTransform.position, spawnTransform.rotation, id);
-		view.RPC("SpawnPlayerProxy", PhotonTargets.OthersBuffered, PhotonNetwork.player, spawnTransform.position, spawnTransform.rotation, id);
+		view.RPC("SpawnPlayerProxy", PhotonTargets.OthersBuffered, spawnTransform.position, spawnTransform.rotation, id);
 	}
 	
 	void SpawnLocalPlayer(Vector3 spawnPosition, Quaternion spawnRotation, int id){
@@ -44,8 +44,8 @@ public class PlayerSpawnNetworkManager : Photon.MonoBehaviour {
 	}
 	
 	[RPC]
-	void SpawnPlayerProxy(PhotonPlayer player, Vector3 spawnPosition, Quaternion spawnRotation, int id){
-		Debug.Log ("spawning proxy for " +player+" at: "+spawnPosition);
+	void SpawnPlayerProxy(Vector3 spawnPosition, Quaternion spawnRotation, int id){
+		Debug.Log ("spawning proxy at: "+spawnPosition);
 		GameObject newPlayer = (GameObject) Instantiate(playerObj, spawnPosition, spawnRotation);
 		newPlayer.GetComponent<PhotonView>().viewID = id;
 

@@ -202,6 +202,11 @@
      <Compile Include="Assets\DownloadedAssets\Top-DownSF\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Companion Managers\CompanionAnimationManager.cs" />
      <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Identification Script Components\RifleCrosshairs.cs" />
+     <Compile Include="Assets\Scripts\Identification Script Components\SMGCrosshairs.cs" />
+     <Compile Include="Assets\Scripts\Networking\GameNetworkManager.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerNetworkManager.cs" />
+     <Compile Include="Assets\Scripts\Networking\PlayerSpawnNetworkManager.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\BulletMove.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\ImpactNoise.cs" />
      <Compile Include="Assets\Scripts\Objects and Interactables\LightsOut.cs" />

@@ -33,4 +33,9 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - TaggedPlayer
+  - SpawnPlayerProxy
+  - ProxyUpdateSprinting
+  - ProxyUpdateVelocityValues
+  - ProxyTriggerMelee
+  - ProxyTriggerReload
   DisableAutoOpenWizard: 0

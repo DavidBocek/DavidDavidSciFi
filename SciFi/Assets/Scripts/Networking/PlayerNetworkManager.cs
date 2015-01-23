@@ -5,6 +5,7 @@ public class PlayerNetworkManager : Photon.MonoBehaviour {
 
 	private PhotonView view;
 	private CompanionAnimationManager companionAnimManager;
+	private CompanionWeaponAndAbilityManager companionWeaponsManager;
 	private MovementManager movementManager;
 	private WeaponAndAbilityManager weaponsManager;
 	
@@ -21,6 +22,7 @@ public class PlayerNetworkManager : Photon.MonoBehaviour {
 	void Start () {
 		view = GetComponent<PhotonView>();
 		companionAnimManager = GetComponentInChildren<CompanionAnimationManager>();
+		companionWeaponsManager = GetComponentInChildren<CompanionWeaponAndAbilityManager>();
 		movementManager = GetComponentInChildren<MovementManager>();
 		weaponsManager = GetComponentInChildren<WeaponAndAbilityManager>();
 	}
@@ -69,7 +71,7 @@ public class PlayerNetworkManager : Photon.MonoBehaviour {
 		}
 	}
 
-
+	//animations
 	public void TriggerMeleeAnimation(){
 		Debug.Log(this+"\t"+view);
 		view.RPC("ProxyTriggerMelee",PhotonTargets.Others);
@@ -85,5 +87,14 @@ public class PlayerNetworkManager : Photon.MonoBehaviour {
 	[RPC]
 	void ProxyTriggerReload(){
 		companionAnimManager.TriggerReload();
+		companionWeaponsManager.ProxyReloadEffects();
+	}
+
+	public void ShootEffects(Ray traj, bool isInSMGMode){
+		view.RPC("ProxyShootEffects", PhotonTargets.Others, traj.origin, traj.direction, isInSMGMode);
+	}
+	[RPC]
+	void ProxyShootEffects(Vector3 trajOrigin, Vector3 trajDirection, bool isInSMGMode){
+		companionWeaponsManager.ActivateProxyShootEffects(new Ray(trajOrigin, trajDirection), isInSMGMode);
 	}
 }

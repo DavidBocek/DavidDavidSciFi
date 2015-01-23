@@ -38,4 +38,6 @@ MonoBehaviour:
   - ProxyUpdateVelocityValues
   - ProxyTriggerMelee
   - ProxyTriggerReload
+  - ProxyShoot
+  - ProxyShootEffects
   DisableAutoOpenWizard: 0

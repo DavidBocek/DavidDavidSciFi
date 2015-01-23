@@ -277,6 +277,9 @@ public class WeaponAndAbilityManager : MonoBehaviour {
 			bullRot = Quaternion.LookRotation(traj.direction);
 		}
 
+		//network callback
+		networkManager.ShootEffects(traj, isInSMGMode);
+
 		if(isInSMGMode){
 			//visual effects
 			GameObject tempBullet = (GameObject)GameObject.Instantiate(SMGTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.forward), bullRot);

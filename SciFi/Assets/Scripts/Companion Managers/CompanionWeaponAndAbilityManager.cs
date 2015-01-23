@@ -44,7 +44,7 @@ public class CompanionWeaponAndAbilityManager : MonoBehaviour {
 		
 		if(isInSMGMode){
 			//visual effects
-			GameObject tempBullet = (GameObject)GameObject.Instantiate(SMGTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.forward), bullRot);
+			GameObject tempBullet = (GameObject)GameObject.Instantiate(SMGTrail, sourcePoint.position/* + 1.25f * sourcePoint.TransformDirection(Vector3.forward)*/, bullRot);
 			Destroy (tempBullet, dist/tempBullet.GetComponent<BulletMove>().speed);
 			
 			GameObject flash = (GameObject)GameObject.Instantiate(SMGMuzz, sourcePoint.position - .05f * sourcePoint.TransformDirection(Vector3.forward), sourcePoint.rotation);
@@ -68,7 +68,7 @@ public class CompanionWeaponAndAbilityManager : MonoBehaviour {
 			sourcePoint.audio.Play();
 		} else {
 			//visual effects
-			GameObject tempBullet = (GameObject)GameObject.Instantiate(rifleTrail, sourcePoint.position + 1.25f * sourcePoint.TransformDirection(Vector3.forward), bullRot);
+			GameObject tempBullet = (GameObject)GameObject.Instantiate(rifleTrail, sourcePoint.position/* + 1.25f * sourcePoint.TransformDirection(Vector3.forward)*/, bullRot);
 			Destroy (tempBullet, dist/tempBullet.GetComponent<BulletMove>().speed);
 			
 			GameObject flash = (GameObject)GameObject.Instantiate(rifleMuzz, sourcePoint.position, sourcePoint.rotation);
